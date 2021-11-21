@@ -5,15 +5,15 @@ pragma solidity ^0.8.7;
 import "contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "contracts/access/Ownable.sol";
 
-contract TheStripesNFT is ERC721Enumerable, Ownable {
+contract MrTedNFT is ERC721Enumerable, Ownable {
     using Strings for uint256;
 
     string public baseURI;
     string public baseExtension = ".json";
-    uint256 public cost = 0.05 ether;
-    uint256 public presaleCost = 0.03 ether;
-    uint256 public maxSupply = 992;
-    uint256 public maxMintAmount = 20;
+    uint256 public cost = 0.01 ether;
+    uint256 public presaleCost = 0.009 ether;
+    uint256 public maxSupply = 10000;
+    uint256 public maxMintAmount = 10000;
     bool public paused = false;
     mapping(address => bool) public whitelisted;
     mapping(address => bool) public presaleWallets;
@@ -24,7 +24,7 @@ contract TheStripesNFT is ERC721Enumerable, Ownable {
         string memory _initBaseURI
     ) ERC721(_name, _symbol) {
         setBaseURI(_initBaseURI);
-        mint(msg.sender, 20);
+        mint(msg.sender, 100);
     }
 
     // internal
